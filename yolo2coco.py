@@ -5,7 +5,7 @@ import json
 
 
 parser=argparse.ArgumentParser()
-parser.add_argument('--yolo-path',type=str,default='yolov5/runs/detect/exp/labels')
+parser.add_argument('--yolo-path',type=str,default='yolov5/runs/detect/exp2/labels')
 parser.add_argument('--data-root',type=str,default='/eva_data/zchin/vrdl_hw2_data')
 args=parser.parse_args()
 
@@ -41,7 +41,7 @@ if __name__=='__main__':
             width*=w
             height*=h
             min_x=x_center-width/2
-            min_y=y_center/2
+            min_y=y_center-height/2
 
             det_box_info['bbox']=(tuple((min_x,min_y,width,height)))
             det_box_info['score']=float(line[5])
