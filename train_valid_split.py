@@ -9,7 +9,6 @@ import shutil
 parser=argparse.ArgumentParser()
 parser.add_argument('--data-root',type=str,default='/eva_data/zchin/vrdl_hw2_data',help='trainig image saving directory')
 parser.add_argument('--ratio',type=float,default=0.2,help='validation data ratio')
-parser.add_argument('--data-dir',type=str,default='./data',help='directory to save train valid split results')
 args=parser.parse_args()
 
 if __name__=='__main__':
