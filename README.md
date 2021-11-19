@@ -25,6 +25,7 @@ You need to have [Anaconda](https://www.anaconda.com/) or Miniconda already inst
 ```
 conda env create --name detect python=3
 conda activate detect
+conda install pytorch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 cudatoolkit=10.1 -c pytorch
 cd yolov5
 pip install -r requirements.txt
 ```
@@ -60,7 +61,7 @@ Got to `yolov5/data/custom-data.yml` and modified `path`, `train`, `val` and `te
 
 ## Training
 
-You should have Graphics card to train the model. For your reference, we trained on 2 NVIDIA RTX 1080Ti for 14 hours. Before training, you should download `yolov5s.pt` from `https://github.com/ultralytics/yolov5/releases/tag/v6.0`.
+You should have Graphics card to train the model. For your reference, we trained on 2 NVIDIA RTX 1080Ti for 14 hours.
 
 Recommended training command:
 ```
@@ -70,8 +71,8 @@ python train.py --weights <yolo5s.pt_file> --cfg models/yolov5s.yaml --data data
 There are more setting arguments you can tune in `yolov5/train.py`, our recommendation is first stick with default setting.
 
 * input: pre-trained `yolo5s.pt` downloaded from https://github.com/ultralytics/yolov5/releases/tag/v6.0
-* output: logging directory `<train_log_dir>`. Note: if this is your first experiment there will be a subdirectory name `exp/`, if second `exp2` and so on. Inside this logging directory you can find:
-  * `weights/`: All the training checkpoints will be saved inside here. Checkpoints is saved every 5 epochs and `best.pth` save the current best model and `last.pt` save the latest model.
+* output: logging directory `<train_log_dir>`. Note: if this is your first experiment there will be a subdirectory name `exp/`, `exp2` if this is your second experiment and so on. Inside this logging directory you can find:
+  * `weights/`: All the training checkpoints will be saved inside here. Checkpoints is saved every 5 epochs and `best.pt` save the current best model and `last.pt` save the latest model.
   * tensorboard event
   * Some miscellaneous information about the data and current hyperparameter
 
@@ -107,7 +108,7 @@ python yolo2coco.py --yolo-path <detect_label_dir>
 * output: `answer.json`
 
 ## Submit the results
-Run this command to `zip` your submission file:
+Run this command to compress your submission file:
 ```
 zip answer.zip answer.json
 ```
@@ -115,7 +116,7 @@ You can upload `answer.zip` to the challenge. Then you can get your testing scor
 
 ## Pre-trained models
 
-Click into [Releases](https://github.com/yolov5-svhn-detection/releases). Under **My YOLOv5s model** download `yolov5_best.pt`. This pre-trained model get score 0.4067 on the SVHN testing set.
+Go to [Releases](https://github.com/yolov5-svhn-detection/releases). Under **My YOLOv5s model** download `yolov5_best.pt`. This pre-trained model get score 0.4067 on the SVHN testing set.
 
 ## Inference
 To reproduce our results, run this command:
