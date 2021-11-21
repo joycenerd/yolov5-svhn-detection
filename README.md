@@ -98,6 +98,15 @@ python detect.py --weights <ckpt_path> --source <test_data_dir_path> --save-txt 
   * testing images 
 * output: `yolov5/runs/detect/exp<X>/labels/`will be generated, inside this folder will have text files with the same name as the testing images, and inside each text file is the detection results of the correspoding testing image in YOLO format.
 
+There is another way that you don't need to do post-processing afterward:
+```
+cd yolov5
+python val.py --data data/custom-data.yaml --weights <ckpt_path> --device <gpu_id> --project <test_log_dir> --task test --save-txt --save-conf --save-json
+```
+
+* input: training model checkpoint
+* output: `test_log_dir/exp<X>/<ckpt_name>.json` -> this is the COCO format detection result of the test set.
+
 ## Post-processing
 
 Turn YOLO format detection results into COCO format.
@@ -122,7 +131,7 @@ Go to [Releases](https://github.com/yolov5-svhn-detection/releases). Under **My 
 To reproduce our results, run this command:
 ```
 cd yolov5
-python detect.py --weights <yolov5_best.pt_path> --source <test_data_dir_path> --save-txt --device <gpu_id> --save-conf --nosave
+python val.py --data data/custom-data.yaml --weights <yolov5_best.pt_path> --device <gpu_id> --project <test_log_dir> --task test --save-txt --save-conf --save-json
 ```
 
 ## Benchmark the speed
@@ -137,12 +146,15 @@ To reproduce our submission without retraining, do the following steps
 3. [Download the data and data pre-processing](#dataset)
 4. [Download pre-trained models](#pre-trained-models)
 5. [Inference](#inference)
-6. [Post-processing](#post-processing)
 6. [Submit the results](#submit-the-results)
 
 ## Results
 
-* Testing score: 0.4067
+* Testing score:
+
+| conf_thres | 0.25   | 0.01   | 0.001  |
+|------------|--------|--------|--------|
+| score      | 0.4067 | 0.4172 | 0.4217 |
 * Detection speed: 227ms per image
 
 ## GitHub Acknowledgement
