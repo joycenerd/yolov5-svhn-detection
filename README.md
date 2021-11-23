@@ -125,7 +125,7 @@ You can upload `answer.zip` to the challenge. Then you can get your testing scor
 
 ## Pre-trained models
 
-Go to [Releases](https://github.com/yolov5-svhn-detection/releases). Under **My YOLOv5s model** download `yolov5_best.pt`. This pre-trained model get score 0.4067 on the SVHN testing set.
+Go to [Releases](https://github.com/yolov5-svhn-detection/releases). Under **My YOLOv5s model** download `yolov5_best.pt`. This pre-trained model get score 0.4217 on the SVHN testing set.
 
 ## Inference
 To reproduce our results, run this command:
