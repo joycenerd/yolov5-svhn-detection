@@ -155,7 +155,7 @@ To reproduce our submission without retraining, do the following steps
 | conf_thres | 0.25   | 0.01   | 0.001  |
 |------------|--------|--------|--------|
 | score      | 0.4067 | 0.4172 | 0.4217 |
-* Detection speed: 227ms per image
+* Detection speed: 22.7ms per image
 
 ## GitHub Acknowledgement
 We thank the authors of these repositories:
