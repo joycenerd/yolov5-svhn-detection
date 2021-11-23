@@ -1,5 +1,5 @@
 # yolov5-svhn-detection
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/joycenerd/yolov5-svhn-detection/blob/main/inference.ipynb)
 
 ### [Report](./REPORT.pdf)
 
