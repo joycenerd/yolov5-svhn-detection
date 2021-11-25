@@ -271,7 +271,7 @@ def run(data,
         pred_json = str(save_dir / f"{w}_predictions.json")  # predictions json
         LOGGER.info(f'\nEvaluating pycocotools mAP... saving {pred_json}...')
         with open(pred_json, 'w') as f:
-            json.dump(jdict, indent=4,fp=f)
+            json.dump(jdict, indent=4, fp=f)
 
         try:  # https://github.com/cocodataset/cocoapi/blob/master/PythonAPI/pycocoEvalDemo.ipynb
             check_requirements(['pycocotools'])
